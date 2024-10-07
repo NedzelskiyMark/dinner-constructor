@@ -10,10 +10,10 @@ public class DishList {
     public void addNewDishToList(Dish dish, String type) {
 
         /*Check list is not empty and type of dish already in list*/
-        if (dishList.keySet().contains(type)) {
+        if (dishList.containsKey(type)) {
             dishList.get(type).add(dish);
         } else {
-            ArrayList<Dish> list = new ArrayList<Dish>();
+            ArrayList<Dish> list = new ArrayList<>();
             list.add(dish);
             dishList.put(type, list);
         }
