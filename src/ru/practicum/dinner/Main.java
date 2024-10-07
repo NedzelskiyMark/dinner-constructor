@@ -9,6 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         dc = new DinnerConstructor();
+        DishList dishList = new DishList();
         scanner = new Scanner(System.in);
 
         while (true) {
@@ -17,7 +18,7 @@ public class Main {
 
             switch (command) {
                 case "1":
-                    addNewDish();
+                    addNewDish(dishList);
                     break;
                 case "2":
                     generateDishCombo();
@@ -35,11 +36,13 @@ public class Main {
         System.out.println("3 - Выход");
     }
 
-    private static void addNewDish() {
+    private static void addNewDish(DishList dishList) {
         System.out.println("Введите тип блюда:");
         String dishType = scanner.nextLine();
         System.out.println("Введите название блюда:");
         String dishName = scanner.nextLine();
+        Dish dish = new Dish(dishName);
+        dishList.addNewDishToList(dish, dishType);
 
         // добавьте новое блюдо
     }
