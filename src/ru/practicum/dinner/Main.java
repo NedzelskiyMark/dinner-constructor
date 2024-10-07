@@ -70,7 +70,7 @@ public class Main {
             return;
         }
 
-
+        dc.constructDinners(numberOfCombos, dishList);
 
         // сгенерируйте комбинации блюд и выведите на экран
 

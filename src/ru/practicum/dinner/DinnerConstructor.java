@@ -37,7 +37,7 @@ public class DinnerConstructor {
             for (int j = 0; j < dishTypesList.size(); j++) {
                 String dishType = dishTypesList.get(j);
                 ArrayList<Dish> dishOptions = optionsHashMap.get(dishType);
-                String dishOption = dishOptions.get(random.nextInt(dishTypesList.size())).getName();
+                String dishOption = dishOptions.get(random.nextInt(dishOptions.size())).getName();
                 dinnerOption.add(dishOption);
             }
 
