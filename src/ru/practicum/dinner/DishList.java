@@ -20,4 +20,8 @@ public class DishList {
 
 
     }
+
+    public HashMap<String, ArrayList<Dish>> getList () {
+        return dishList;
+    }
 }

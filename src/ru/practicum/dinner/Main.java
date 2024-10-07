@@ -21,7 +21,7 @@ public class Main {
                     addNewDish(dishList);
                     break;
                 case "2":
-                    generateDishCombo();
+                    generateDishCombo(dishList);
                     break;
                 case "3":
                     return;
@@ -47,7 +47,9 @@ public class Main {
         // добавьте новое блюдо
     }
 
-    private static void generateDishCombo() {
+    private static void generateDishCombo(DishList dishList) {
+        dc.refreshDishTypesList();
+
         System.out.println("Начинаем конструировать обед...");
 
         System.out.println("Введите количество наборов, которые нужно сгенерировать:");
@@ -59,8 +61,16 @@ public class Main {
 
         //реализуйте ввод типов блюд
         while (!nextItem.isEmpty()) {
-
+            dc.makeDinnerStructure(dishList, nextItem);
+            nextItem = scanner.nextLine();
         }
+
+        //we will create dinner options if list of dish types is not empty
+        if (dc.getDishTypesList().isEmpty()) {
+            return;
+        }
+
+
 
         // сгенерируйте комбинации блюд и выведите на экран
 
