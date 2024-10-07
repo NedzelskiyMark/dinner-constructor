@@ -8,7 +8,6 @@ public class DishList {
 
 
     public void addNewDishToList(Dish dish, String type) {
-
         /*Check list is not empty and type of dish already in list*/
         if (dishList.containsKey(type)) {
             dishList.get(type).add(dish);
@@ -21,7 +20,7 @@ public class DishList {
 
     }
 
-    public HashMap<String, ArrayList<Dish>> getList () {
+    public HashMap<String, ArrayList<Dish>> getList() {
         return dishList;
     }
 }
