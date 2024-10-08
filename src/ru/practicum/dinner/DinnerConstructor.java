@@ -15,17 +15,16 @@ public class DinnerConstructor {
     }
 
     //clear dishTypesList if user want to make new dinner choices
+    //Логично...
     void refreshDishTypesList() {
-        if (!dishTypesList.isEmpty()) {
             dishTypesList.clear();
-        }
     }
-
-    void makeDinnerStructure(DishList dishlist, String type) {
-        if (!dishlist.getList().containsKey(type)) {
-            System.out.println("Такого типа блюда нет!");
-        } else {
+    //Спасибо, мне надо больше думать о том как код читается, не только о том чтобы он работал)
+    void makeDinnerStructure(DishList dishListHolder, String type) {
+        if (dishListHolder.getList().containsKey(type)) {
             dishTypesList.add(type);
+        } else {
+            System.out.println("Такого типа блюда нет!");
         }
     }
 

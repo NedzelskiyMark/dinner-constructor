@@ -9,15 +9,9 @@ public class DishList {
 
     public void addNewDishToList(Dish dish, String type) {
         /*Check list is not empty and type of dish already in list*/
-        if (dishList.containsKey(type)) {
-            dishList.get(type).add(dish);
-        } else {
-            ArrayList<Dish> list = new ArrayList<>();
-            list.add(dish);
-            dishList.put(type, list);
-        }
-
-
+        //Спасибо за помощь!
+        dishList.computeIfAbsent(type, k -> new ArrayList<Dish>());
+        dishList.get(type).add(dish);
     }
 
     public HashMap<String, ArrayList<Dish>> getList() {
